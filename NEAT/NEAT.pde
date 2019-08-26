@@ -18,7 +18,9 @@ void draw()
 void train()
 {
   Genome start = new Genome(2, 1, 5);
-  Population p = new Population(150, start, 3f, 1f, 1f, 0.4f, null);
+  HashMap<Chance, Float> mutationrates = new HashMap<Chance, Float>();
+  mutationrates.put(Chance.AddConnection, 0.45f);
+  Population p = new Population(150, start, 3f, 1f, 1f, 0.4f, mutationrates);
   Network currentnet = null;
   InputTarget[] it =
   {

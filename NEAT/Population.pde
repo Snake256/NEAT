@@ -233,9 +233,11 @@ class Population
         // If other chances are specified override the default ones
         if(chances != null)
         {
+          Object[] keys = chances.keySet().toArray();
           for(int i = 0; i < chances.size(); i++)
           {
-            this.GetChances().put((Chance)this.GetChances().keySet().toArray()[i], chances.get(i));
+            Chance _key = (Chance) keys[i];
+            this.GetChances().put(_key, chances.get(_key));
           }
         }
     }
